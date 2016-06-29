@@ -3,9 +3,9 @@ env:
   global:
   - GH_USER: nelson
 node_js:
-- '0.10'
+- '0.12'
 install:
-- npm install jshint mocha gulp bower -g 
+- npm install jshint mocha gulp bower babel-register -g 
 - npm install
 - bower install
 - gulp build
