@@ -9,7 +9,8 @@ install:
 - npm install
 - bower install
 - gulp build
-- cd dist
+- ls 
+- cd  ~/build/Nelson119/fa/dist
 - git init
 - git config user.name nelson119
 - git config user.email nelson119@outlook.com
