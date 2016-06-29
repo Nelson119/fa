@@ -1,0 +1,86 @@
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/font-awesome/scss/font-awesome.scss";
+// endbower
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: "liga";
+	font-style: normal;
+	text-rendering: optimizelegibility;
+	font-family: 'microsoft jhenghei',cursive;
+	font-size: 14px;
+	letter-spacing:1px;
+	word-spacing:1px;
+	min-width:320px;
+	overflow-x:hidden;
+	::selection,::-moz-selection {
+		background:rgba(0,0,0,0.05);
+		color:inherit;
+	}
+	img::selection{
+		background:rgba(0,0,0,0.05);
+		color:inherit;	
+	}
+	img::-moz-selection {
+		background:rgba(0,0,0,0.05);
+		color:inherit;	
+	}
+	a{
+		// color:$main-text-color;
+		transition-duration: 0.15s;
+		&:focus,&:hover,&:active,&.active{
+			transition-duration: 0.25s;
+			// color:$main-yellow;
+			outline:0;
+			text-decoration: none;
+			img{
+				border:0;
+			}
+		}
+		img{
+			border:0;
+		}
+	}
+	ul,ol{
+		margin:0;
+		padding:0;
+		li{
+			list-style: none;
+			display: inline-block;
+		}
+	}
+	img.svg{
+		visibility: hidden;
+	}
+	svg.svg{
+		>*{
+			// fill:$transparent;
+		}
+	}
+
+	.container{
+		max-width:1200px;
+		width:100%;
+	}
+	figure{
+		overflow: hidden;
+		img{
+			max-width:100%;
+			width:100%;
+		}
+	}
+	h3,h4,h5,h6{
+		line-height:1.3em;
+	}
+}
