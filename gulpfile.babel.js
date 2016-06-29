@@ -57,7 +57,7 @@ gulp.task('html', ['css', 'js'], () => {
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano()))
     // .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
-    .pipe(gulp.dest('../aspx/html'));
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('img', () => {
@@ -73,14 +73,14 @@ gulp.task('img', () => {
       console.log(err);
       this.end();
     })))
-    .pipe(gulp.dest('../aspx/html/img'));
+    .pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('fonts', () => {
   return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
     .concat('app/fonts/**/*'))
     .pipe(gulp.dest('.tmp/fonts'))
-    .pipe(gulp.dest('../aspx/html/fonts'));
+    .pipe(gulp.dest('dist/fonts'));
 });
 
 gulp.task('extras', () => {
@@ -89,7 +89,7 @@ gulp.task('extras', () => {
     '!app/*.html'
   ], {
     dot: true
-  }).pipe(gulp.dest('../aspx/html'));
+  }).pipe(gulp.dest('dist'));
 });
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
@@ -124,7 +124,7 @@ gulp.task('serve:dist', () => {
     notify: false,
     port: 9000,
     server: {
-      baseDir: ['../aspx/html']
+      baseDir: ['dist']
     }
   });
 });
@@ -165,7 +165,7 @@ gulp.task('wiredep', () => {
 });
 
 gulp.task('build', ['lint', 'html', 'img', 'fonts', 'extras'], () => {
-  return gulp.src('../aspx/html/**/*').pipe($.size({title: 'build', gzip: true}));
+  return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
 gulp.task('default', ['clean'], () => {

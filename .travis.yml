@@ -9,12 +9,13 @@ install:
 - npm install
 - bower install
 - gulp build
-- ls 
-- cd  ~/build/Nelson119/fa/dist
+- cd dist
 - git init
 - git config user.name nelson119
 - git config user.email nelson119@outlook.com
 - git remote add origin $GH_REF
+- ls ../dist/*
+- cp -r ../dist/* .
 - git add .
 - git commit -m "Deployed to Github Pages"
 - git push -f --quiet origin master:gh-pages
